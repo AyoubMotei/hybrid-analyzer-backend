@@ -76,7 +76,7 @@ def login(user: UserCreate, db: Session = Depends(get_db)):
 
 @app.post("/analyser")
 def analyse(text:str , current_user: User = Depends(get_current_user)):
-    print(f"Analyse demandée par l'utilisateur: {current_user}")
+    # print(f"Analyse demandée par l'utilisateur: {current_user}")
     gemini_response=summarize_and_analyze_tone(text)
     return gemini_response
     
