@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+python-jose[cryptography]
+passlib[argon2]
+requests
+psycopg2-binary
+sqlalchemy
+google-genai
+ 
+
+
+python-multipart
+pydantic
+huggingface_hub
+
