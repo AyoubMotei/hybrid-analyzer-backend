@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 # Schémas Utilisateur
@@ -19,10 +19,12 @@ class Token(BaseModel):
 
 
 class AnalysisInput(BaseModel):
-    text: str = Field(..., description="Le texte brut à analyser (ex: un article de presse).")
+    text: str 
 
 class AnalysisResult(BaseModel):
-    category: str = Field(..., description="Catégorie prédite par Hugging Face (ex: Finance).")
-    score: float = Field(..., description="Score de confiance associé à la catégorie.")
-    summary: str = Field(..., description="Résumé concis généré par Gemini (max 60 mots).")
-    tone: str = Field(..., description="Tonalité détectée par Gemini (ex: positif, négatif, neutre).")
+    summary: str 
+    tone: str
+    category: str  
+    score: float 
+    
+  

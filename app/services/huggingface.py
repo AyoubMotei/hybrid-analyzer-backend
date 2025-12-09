@@ -9,7 +9,8 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 API_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
 
 
-CATEGORIES = ["refund", "legal", "faq", "AI", "Finance", "RH", "Opérations", "Juridique", "Marketing", "Général", "Sport"]
+CATEGORIES =  ["Finance", "RH", "IT", "Opérations", "Marketing", "Juridique", "Sport", "Général"]
+
 
 def classify_text(text):
 
@@ -31,7 +32,7 @@ def classify_text(text):
     label = data[0]["label"]
     score = data[0]["score"]
 
-    return label, score
+    return label,score
 
 
 

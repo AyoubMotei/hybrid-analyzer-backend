@@ -42,7 +42,14 @@ def summarize_and_analyze_tone(text):
     data = json.loads(text_response)
       
     if "summary" in data and "tone" in data:
-        return {"summary": data["summary"], "tone": data["tone"], "category": category[0], "score":category[1] },
+        return {
+        "summary": data["summary"],
+        "tone": data["tone"],
+        "category": category[0],
+        "score": category[1]
+        }
+        
+        
     else:
             
         return {"summary": "Synthèse indisponible.", "tone": "neutre"}

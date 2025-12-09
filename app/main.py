@@ -2,19 +2,19 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import engine, Base, get_db 
  
-from .schemas import UserCreate, UserLogin , AnalysisInput, AnalysisResult, Token
+from .schemas import UserCreate, UserLogin ,  Token , AnalysisInput, AnalysisResult
 from app.models import User
 
 from app.auth import create_access_token, hash_password, verify_password, get_current_user
 
 from app.services.gemini import summarize_and_analyze_tone
 
-from .database import get_db
 
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
+
 
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -74,10 +74,9 @@ def login(user: UserCreate, db: Session = Depends(get_db)):
     return {"access_token": token, "token_type": "bearer"}
 
 
-@app.post("/analyser")
-def analyse(text:str , current_user: User = Depends(get_current_user)):
-    # print(f"Analyse demandée par l'utilisateur: {current_user}")
-    gemini_response=summarize_and_analyze_tone(text)
+@app.post("/analyse", response_model=AnalysisResult)
+def analyse(data:AnalysisInput, current_user: User = Depends(get_current_user)):
+    gemini_response=summarize_and_analyze_tone(data.text)
     return gemini_response
     
     
