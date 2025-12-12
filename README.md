@@ -316,22 +316,13 @@ hybrid-analyzer-backend/
 │       └── 📄 gemini.py             # Synthèse + Analyse de ton
 │
 ├── 📁 tests/                        # Tests unitaires et d'intégration
-│   ├── 📄 __init__.py
-│   ├── 📄 conftest.py               # Configuration pytest
-│   ├── 📄 test_mock_huggingface.py  # Tests HF (mocké)
-│   ├── 📄 test_mock_gemini.py       # Tests Gemini (mocké)
-│   └── 📄 test_chainage_complet.py  # Tests end-to-end
-│
-├── 📁 venv/                         # Environnement virtuel (non versionné)
-│
-├── 📄 .env                          # Variables d'environnement (SECRET)
-├── 📄 .gitignore                    # Fichiers ignorés par Git
-├── 📄 Dockerfile                    # Image Docker du backend
-├── 📄 docker-compose.yml            # Orchestration multi-services
-├── 📄 requirements.txt              # Dépendances Python
-├── 📄 pytest.ini                    # Configuration pytest
-├── 📄 README.md                     # Documentation (ce fichier)
-└── 📄 LICENSE                       # Licence du projet
+   ├── 📄 __init__.py
+   ├── 📄 conftest.py               # Configuration pytest
+   ├── 📄 test_mock_huggingface.py  # Tests HF (mocké)
+   ├── 📄 test_mock_gemini.py       # Tests Gemini (mocké)
+   └── 📄 test_chainage_complet.py  # Tests end-to-end
+
+
 ```
 
 ### Description des modules principaux
