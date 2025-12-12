@@ -4,6 +4,7 @@ from app.services.huggingface import classify_text
 def test_hugging_face(mocker):
   
     fake_output = [
+        
         {
             "label": "sport",
             "score": 0.93
@@ -15,6 +16,7 @@ def test_hugging_face(mocker):
     fake.status_code = 200
     fake.json.return_value = fake_output
 
+    
     
     mocker.patch(
         "app.services.huggingface.requests.post",

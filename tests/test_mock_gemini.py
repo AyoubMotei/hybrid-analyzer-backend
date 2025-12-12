@@ -2,7 +2,7 @@ import app.services.gemini as gemini_module
 
 
 def test_mock_gemini(mocker):
- 
+
     fake_result = {
         "summary": "Résumé simulé",
         "tone": "positif",
@@ -13,14 +13,14 @@ def test_mock_gemini(mocker):
     def fake_gemini(text):
         return fake_result
 
-  
+
     mocker.patch.object(
         gemini_module,
         "summarize_and_analyze_tone",
         side_effect=fake_gemini
     )
 
-   
+
     result = gemini_module.summarize_and_analyze_tone("Texte test")
 
     assert isinstance(result, dict)
