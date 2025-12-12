@@ -131,29 +131,29 @@ app/
 ##  Fonctionnalités
 
 ### Authentification & Autorisation
-- ✅ Inscription utilisateur avec hashing Argon2
-- ✅ Connexion avec génération de token JWT
-- ✅ Protection des endpoints par Bearer Token
-- ✅ Validation automatique des tokens expirés
+- Inscription utilisateur avec hashing Argon2
+- Connexion avec génération de token JWT
+- Protection des endpoints par Bearer Token
+- Validation automatique des tokens expirés
 
 ###  Orchestration IA
-- ✅ Classification Zero-Shot (8 catégories)
-- ✅ Score de confiance pour chaque prédiction
-- ✅ Synthèse contextuelle intelligente (max 60 mots)
-- ✅ Détection automatique du ton (positif/négatif/neutre)
-- ✅ Gestion des erreurs API (timeout, rate limit)
-- ✅ Logging complet des requêtes IA
+- Classification Zero-Shot (8 catégories)
+- Score de confiance pour chaque prédiction
+- Synthèse contextuelle intelligente (max 60 mots)
+- Détection automatique du ton (positif/négatif/neutre)
+- Gestion des erreurs API (timeout, rate limit)
+- Logging complet des requêtes IA
 
 ###  Gestion des données
-- ✅ Stockage sécurisé des utilisateurs (PostgreSQL)
-- ✅ Migrations de base de données automatiques
+- Stockage sécurisé des utilisateurs (PostgreSQL)
+- Migrations de base de données automatiques
 
 ###  Robustesse
-- ✅ Gestion d'erreurs complète (try/catch)
-- ✅ Validation de schémas avec Pydantic
-- ✅ Tests unitaires avec mocks (pytest)
-- ✅ Tests d'intégration end-to-end
-- ✅ CORS configuré pour le frontend
+- Gestion d'erreurs complète (try/catch)
+- Validation de schémas avec Pydantic
+- Tests unitaires avec mocks (pytest)
+- Tests d'intégration end-to-end
+- CORS configuré pour le frontend
 
 ---
 
@@ -379,11 +379,11 @@ hybrid-analyzer-backend/
 
 | Méthode | Endpoint | Protection | Description |
 |---------|----------|------------|-------------|
-| `GET` | `/health` | ❌ Public | Health check de l'API |
-| `POST` | `/register` | ❌ Public | Inscription utilisateur |
-| `POST` | `/login` | ❌ Public | Connexion (génère JWT) |
-| `POST` | `/analyse` | ✅ JWT | Analyse IA du texte |
-| `GET` | `/test-env` | ❌ Public | Vérifier config (dev) |
+| `GET` | `/health` | Public | Health check de l'API |
+| `POST` | `/register` | Public | Inscription utilisateur |
+| `POST` | `/login` | Public | Connexion (génère JWT) |
+| `POST` | `/analyse` | JWT | Analyse IA du texte |
+| `GET` | `/test-env` | Public | Vérifier config (dev) |
 
 ---
 
@@ -620,9 +620,9 @@ Catégorie détectée : {category}
 ```
 
 **Pourquoi la catégorie est importante ?**
-- ✅ Contexte pour un résumé pertinent
-- ✅ Vocabulaire adapté au domaine
-- ✅ Cohérence entre classification et synthèse
+- Contexte pour un résumé pertinent
+- Vocabulaire adapté au domaine
+- Cohérence entre classification et synthèse
 
 **Exemple de prompt complet :**
 ```
@@ -721,7 +721,7 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
 ```
-**Frontend Repository** : [hybrid-analyzer-frontend](https://github.com/AyoubMotei/hybrid-analyzer-backend/tree/master)
+**Frontend Repository** : [hybrid-analyzer-frontend](https://github.com/AyoubMotei/hybrid-analyzer-frontend)
 
 ---
 
