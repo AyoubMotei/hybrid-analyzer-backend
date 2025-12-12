@@ -721,7 +721,7 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
 ```
-**Frontend Repository** : [hybrid-analyzer-frontend](https://github.com/AyoubMotei/hybrid-analyzer-backend/tree/master)
+**Frontend Repository** : [hybrid-analyzer-frontend](https://github.com/AyoubMotei/hybrid-analyzer-frontend)
 
 ---
 
